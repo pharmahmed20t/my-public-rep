@@ -5,7 +5,7 @@
 	<p style="font-size: 40pt; color: red;"> Hello World! </p>
 	</body>
 	
- <style type='text/css'>
+<style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
 		font-family: "Arial", sans-serif;
@@ -19,7 +19,7 @@
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'en'; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -33,11 +33,11 @@
 		embedded_svc.settings.entryFeature = 'Flows';
 
 		embedded_svc.init(
-			'https://jbecher.my.salesforce.com',
-			'https://jbecker.force.com',
+			'https://nextstage2021.my.salesforce.com',
+			'https://nextstage.force.com',
 			gslbBaseURL,
-			'00D5e000003S4Q6',
-			'Test_embedded_flow',
+			'00D5e000002SaiV',
+			'test_embedded_flow',
 			{
 				
 			}
@@ -46,7 +46,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://jbecher.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://nextstage2021.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
