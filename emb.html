@@ -63,25 +63,4 @@
 		initESW('https://service.force.com');
 	}
 </script>
-	
-	<style>
-    ul.slds-carousel__indicators{
-  display:flex;
-  margin:0.5rem 0px;
-}
-li.slds-carousel__indicator{
-  display:flex;
-  margin:0px 0.25rem;
-}
-</style>
-<script>
-window.addEventListener("message", receiveMessage, false);
-function receiveMessage(event) {
-    var payload = event.data;
-
-    if(payload && payload.type === "chasitor.sendMessage") {
-        embedded_svc.postMessage("chasitor.sendMessage", payload.message);
-    }
-};
-</script>
 </html>
