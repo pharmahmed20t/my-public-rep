@@ -1,0 +1,18 @@
+<div id='container'></div>
+<script type='text/javascript' src="https://hamiltonthorne.my.site.com/lightning/lightning.out.js"></script>
+<script type='text/javascript'>
+function init(){
+    $Lightning.use("c:TestEmbededFlowApp",    // name of the Lightning app
+        function() {                  // Callback once framework and app loaded
+            $Lightning.createComponent(
+                "c:TestEmbededFlow", // top-level component of your app
+                { },                  // attributes to set on the component when created
+                "container",   // the DOM location to insert the component
+                function(cmp) { // callback when component is created and active on the page
+                }
+            );
+        },
+        'https://hamiltonthorne.my.site.com/'  // Experience Cloud site endpoint
+    );
+    }
+</script>
