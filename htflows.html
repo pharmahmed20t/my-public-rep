@@ -1,52 +1,30 @@
 <html>
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Verdana", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
-	}
-</style>
+<head>
+<title>Page Title</title>
+</head>
+<body>
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+
+<div id='container'>test</div>
+<script type='text/javascript' src="https://hamiltonthorne.my.site.com/lightning/lightning.out.js"></script>
 <script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Flows
-
-		embedded_svc.settings.enabledFeatures = ['Flows'];
-		embedded_svc.settings.entryFeature = 'Flows';
-
-		embedded_svc.init(
-			'https://hamiltonthorne.my.salesforce.com',
-			'https://hamiltonthorne.my.site.com/',
-			gslbBaseURL,
-			'00DA0000000L1kg',
-			'Contact_Us_Button',
-			{
-				
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://hamiltonthorne.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
+    $Lightning.use("c:TestEmbededFlowApp",
+        function() {                  // Callback once framework and app load
+            $Lightning.createComponent(
+                "c:TestEmbededFlow",    // top-level component of your app
+                { },    // attributes to set on the component when created
+                "container",    // the DOM location to insert the component
+                function(component) {            // API name of the Flow
+                    component.startFlow("Landing_Page_Simple_Form");
+                }
+            );
+        },    'https://hamiltonthorne.my.site.com/'  // Site endpoint
+    );
 </script>
+</body>
 </html>
+
+
